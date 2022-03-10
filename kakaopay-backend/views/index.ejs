@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    function clickEvent(){
+
+       axios.get('v1/payment/ready').then((data)=> {
+         console.log('hihihihi',data), 
+       window.location(`data.next_redirect_app_url`) 
+      })
+
+    }
+  </script>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <button onclick="clickEvent()">카카오페이 결제</button>
+  </body>
+
+
+
+
+</html>
